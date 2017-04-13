@@ -3,7 +3,7 @@ myApp.factory('PizzaService', function() {
   smallPrice = 6;
   mediumPrice = 7;
   largePrice = 8;
-  toppingsPrice = 1
+  toppingsPrice = 1;
 
   var pizzaOrderObject = {
     orders : [],
@@ -48,26 +48,19 @@ myApp.factory('PizzaService', function() {
     pizzaOrderObject.orders.splice(index,1);
   };
 
-  // var confirmItem = function(order){
-  //   // console.log('confirm item' , order.price);
-  //
-  //   // console.log('total' + confirmedPizzaObject.total);
-  //   //to delele from the orderview
+  var confirmItem = function(order){
+    // console.log('confirm item' , order.price);
+    confirmedPizzaObject.orders.push(order);
+    confirmedPizzaObject.total += order.price;
+    // console.log('total' + confirmedPizzaObject.total);
+    //to delele from the orderview
     var index = pizzaOrderObject.orders.indexOf(order);
     pizzaOrderObject.orders.splice(index,1);
     console.log('confirm item=' , pizzaOrderObject.orders);
-  // };
+  };
 
-  var confirmAll = function(order) {
-    // console.log(order)
-    // confirmedPizzaObject.orders.push(order);
-    // confirmedPizzaObject.total += order.price;
+  var confirmAll = function() {
     // console.log('confirming all, number of pizzas is: ' + pizzaOrderObject.orders.length);
-    var index = pizzaOrderObject.orders.indexOf(order);
-    pizzaOrderObject.orders.splice(index,1);
-    console.log('confirm item=' , pizzaOrderObject.orders);
-
-
     for (var j = 0; j < pizzaOrderObject.orders.length; j++) {
       confirmedPizzaObject.orders.push(pizzaOrderObject.orders[j]);
     }
@@ -83,7 +76,7 @@ myApp.factory('PizzaService', function() {
     confirmedPizzaObject: confirmedPizzaObject,
     confirmAll:confirmAll,
     submitOrder: submitOrder,
-    deleteItem : deleteItem //,
-    //confirmItem: confirmItem
+    deleteItem : deleteItem,
+    confirmItem: confirmItem
   };
 });

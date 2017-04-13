@@ -8,13 +8,13 @@ myApp.controller('OrderController',['PizzaService', function(PizzaService) {
     PizzaService.deleteItem(order);
   };
 
-  order.confirm = function(order){
-    console.log('Confirm in controllerOder' , order);
-    PizzaService.confirmItem(order);
-  };
+  // order.confirm = function(order){
+  //   console.log('Confirm in controllerOder' , order);
+  //   PizzaService.confirmItem(order);
+  // };
 
-  order.confirmAll = function(){
-    PizzaService.confirmAll();
+  order.confirmAll = function(order){
+    PizzaService.confirmAll(order);
   };
 
 }]);
