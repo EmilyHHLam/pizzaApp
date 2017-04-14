@@ -1,6 +1,11 @@
 body {
-  padding: 50px;
-  width: 600px;
+    width: 900px;
+    margin: 0 auto;
+    font-family: sans-serif, serif;
+    font-size: 18px;
+}
+.container{
+  padding: 100px;
 }
 
 .pizza_nav > ul > li {
@@ -10,4 +15,26 @@ body {
 .orderButtons {
   float: right;
   width:200px;
+}
+
+.header {
+  top:0;
+  position: absolute;
+  width: 900px;
+  height:100px;
+  background-color: salmon;
+  text-shadow: 2px 2px 2px #CCCCCC;
+  margin: 0 auto;
+  text-align: center;
+
+
+}
+.itemtitle {
+  font-weight: bolder;
+}
+.hispace {
+  height: 50px;
+}
+.lowspace {
+  height:10px;
 }

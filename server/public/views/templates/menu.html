@@ -2,22 +2,28 @@
 <div class="container">
   <form>
     <div class="pizzaSize">
-      <h2>Select Pizza Size:</h2>
+      <h3>Select Pizza Size:</h3>
       <div ng-repeat="size in menu.pizzaSizes">
-        <input type="radio" name="size" value="{{size}}" ng-model="$parent.pizzaSize">{{size}}
+        <input type="radio" name="size" value="{{size}}" ng-model="$parent.pizzaSize" ng-required="true">&nbsp;&nbsp;&nbsp;{{size}}
       </div>
     </div>
     <br>
     <div class="pizzaToppings">
-      <h2>Select your topping:</h2>
+      <h3>Select your topping:</h3>
 
       <div ng-repeat="topping in menu.pizzaToppings">
-        <input type="radio" name="topping" value="{{topping}}" ng-model="$parent.pizzaTopping">{{topping}}
+        <input type="radio" name="topping" value="{{topping}}" ng-model="$parent.pizzaTopping">&nbsp;&nbsp;&nbsp;{{topping}}
       </div>
     </div>
-    <button type="button" ng-click="menu.submit(pizzaSize,pizzaTopping)">Add Pizza</button>
+    <div class="hispace"></div>
+    <div class="row" style="align:center;" >
+      <div class="col-md-6">
+          <button type="button" class="btn btn-lg" ng-click="menu.submit(pizzaSize,pizzaTopping)">Add Pizza</button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-lg" ><a href="#!/order">View Order</a></button>
+      </div>
+    </div>
+
   </form>
-</div>
-<div>
-  <button type="button"><a href="#!/order">View Order</a></button>
 </div>

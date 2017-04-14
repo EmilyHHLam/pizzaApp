@@ -1,21 +1,38 @@
 
 <div class="container">
   <div class="confirm">
+    <h2>Receipt</h2>
+    <div class="row itemtitle">
+      <div class="col-md-2">Size</div>
+      <div class="col-md-2">Toping</div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2">Price</div>
+
+    </div>
+    <div class="hispace">
+
+    </div>
     <div ng-repeat="pizzaConfirm in confirm.confirmedPizzaObject.orders track by $index">
-      <div class="item">
-          <span><i>size: </i>{{pizzaConfirm.size}}</span>
-          <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <span><i>topping: </i>{{pizzaConfirm.topping}}</span>
-          <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <span><i>price: </i>{{pizzaConfirm.price}}</span>
+
+    <div class="row item">
+          <div class="col-md-2">{{pizzaConfirm.size}}</div>
+          <div class="col-md-2">{{pizzaConfirm.topping}}</div>
+          <div class="col-md-2"></div>
+          <div class="col-md-2">${{pizzaConfirm.price}}.00</div>
       </div>
     </div>
+    <div class="hispace"></div>
     <div>
-      <button type="button"><a href="#!/menu">Go Back</a></button>
+      <button type="button" class="btn btn-lg"><a href="#!/menu">Go Back</a></button>
     </div>
     <div>
-      <span><b>total:</b></span><span>{{confirm.confirmedPizzaObject.total}}</span>
-    </div>
+      <div class="row">
+        <div class="col-md-5"> </div>
+        <div class="col-md-2">
+          <b>TOTAL: </b></span><span><b>${{confirm.confirmedPizzaObject.total}}.00</b></span>
+        </div>
+      </div>
+
 
   </div>
 </div>

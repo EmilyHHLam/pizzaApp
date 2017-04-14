@@ -1,27 +1,39 @@
 
 <div class="container">
   <div class="orders">
+    <div class="hispace"></div>
+    <div class="row itemtitle">
+      <div class="col-md-2">Size</div>
+      <div class="col-md-2">Topping</div>
+      <div class="col-md-2">Price</div>
+      <div class="col-md-6"></div>
+    </div>
+    <div class="hispace"></div>
     <div ng-repeat="pizzaOrder in order.pizzaOrderObject.orders track by $index">
-      <div class="item">
-          <span><i>size: </i>{{pizzaOrder.size}}</span>
-          <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <span><i>topping: </i>{{pizzaOrder.topping}}</span>
-          <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <span><i>price: </i>{{pizzaOrder.price}}</span>
-      </div>
-      <div class="orderButtons">
-        <!--<button type="button" ng-click="order.confirm(pizzaOrder)">Confirm</button>
-        --><button type="button" ng-click="order.remove(pizzaOrder)">Delete</button>
+      <div class="row item">
+          <div class="col-md-2">{{pizzaOrder.size}}</div>
+          <div class="col-md-2">{{pizzaOrder.topping}}</div>
+          <div class="col-md-2">${{pizzaOrder.price}}.00</div>
+          <div class="lowspace col-md-2"></div>
+          <div class="col-md-2">
+            <button type="button" ng-click="order.remove(pizzaOrder)">Delete</button>
+          </div>
 
       </div>
 
     </div>
-    <div>
-      <button type="button"><a href="#!/menu">Go Back</a></button>
+    <div class="hispace">
+
     </div>
-    <div>
-      <button type="button" ng-click="order.confirmAll()"><a href="#!/confirm">Confirm All</a></button>
+    <div class="row">
+      <div class="col-md-6">
+        <button type="button" class="btn btn-lg" ><a href="#!/menu">Go Back</a></button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-lg" style="float:center;" ng-click="order.confirmAll()"><a href="#!/confirm">Confirm Order</a></button>
+      </div>
     </div>
+
 
   </div>
 
